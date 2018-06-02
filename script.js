@@ -186,6 +186,9 @@ function applyGravity() {
     if(player.previousPosition.y !== player.position.y){
       playerGrounded = false;
     }
+    if(player.position.y >= height){
+      executeLoss();
+    }
     for(var i = 0; i < monsters.length; i++){
       monsters[i].velocity.y += GRAVITY;
       if(monsters[i].position.y >= height) {
@@ -203,6 +206,7 @@ function checkCollisions() {
     player.collide(platforms, platformCollision);
     monsters.collide(platforms, platformCollision);
     player.collide(monsters, playerMonsterCollision);
+    player.overlap(collectables, getCollectable);
 }
 
 // Callback function that runs when the player or a monster collides with a
@@ -348,7 +352,7 @@ function keyTyped() {
 function updateDisplay() {
   // clear the screen
   background(0, 0, 0);
-
+camera.position.x=player.position.x;
   // briefly turn camera off before setting any static images or text
   camera.off()
 
