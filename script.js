@@ -56,7 +56,7 @@ function preload() {
   platformImageLast = loadImage("assets/img/tiles/Tile (16).png");
 
   // load player animations
-  playerIdleAnimation = loadAnimation("assets/img/kunoichi/Idle__000.png", "assets/img/kunoichi/Idle__009.png");
+  playerIdleAnimation = loadAnimation("assets/img/bang-stance/bang-stance-0.png", "assets/img/bang-stance/bang-stance-11.png");
   playerRunAnimation = loadAnimation("assets/img/kunoichi/Run__000.png", "assets/img/kunoichi/Run__009.png");
   playerJumpAnimation = loadAnimation("assets/img/kunoichi/Jump__004.png");
   playerFallAnimation = loadAnimation("assets/img/kunoichi/Jump__009.png");
